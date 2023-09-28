@@ -12,9 +12,8 @@ def compute_statistics(temperatures: list[float]) -> float:
 
 def test_compute_statistics():
     test_data = [i for i in range(1,5)]
-
-    mean = compute_statistics(test_data, 3)
-    assert mean == 2
+    mean = compute_statistics(test_data)
+    assert mean == 2.5
 
 def plot_temperatures(temperatures: list[float], mean: float, num_measurements: int) -> None:
     plt.xlabel("Number of measurement")
