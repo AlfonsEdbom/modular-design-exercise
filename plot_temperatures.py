@@ -8,7 +8,7 @@ def read_temperatures_from_file(file_name: str, num_measurements: int, column_na
     data = pd.read_csv(file_name, nrows=num_measurements)
     return data[column_name]
 
-def plot_temperatures(temperatures: list[float], mean: float, num_measurements: int, output_file) -> None:
+def plot_temperatures(temperatures: list[float], mean: float, output_file: str) -> None:
     plt.xlabel("Number of measurement")
     plt.ylabel("Air temperatures")
     plt.plot(temperatures, "r-")
@@ -31,7 +31,7 @@ def main(num_measurements, inputfile, outputfile):
     mean = stats.compute_statistics(temperatures) 
 
     # plot results
-    plot_temperatures(temperatures, mean, num_measurements, outputfile)
+    plot_temperatures(temperatures, mean, outputfile)
 
 if __name__ == "__main__":
     main()
